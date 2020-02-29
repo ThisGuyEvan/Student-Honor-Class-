@@ -11,10 +11,10 @@ class Main {
     int studentNum = console.nextInt();
 
     System.out.print("What's the maximum grade? A+ = ");
-    int maxGrade = console.nextInt();
+    double maxGrade = console.nextDouble();
 
     System.out.print("What's the minimum grade? F = ");
-    int minGrade = console.nextInt();
+    double minGrade = console.nextDouble();
 
     ArrayList<Student> roster = new ArrayList<Student>(); //Create class.
 
@@ -44,16 +44,16 @@ class Main {
     System.out.println(students.toString() + "\n");
 
     System.out.print("What is the required average to be an honor student? ");
-    int require = console.nextInt();
+    double require = console.nextDouble();
 
     //Non ranked print, based on default arraylist order.
     students.configureStudents(require);
-    System.out.println("!!! This is UN-SORTED !!!\n");
+    System.out.println("--------------------------\n!!! This is UN-SORTED !!!\n--------------------------");
     System.out.println(students.toString() + "\n");
 
     //Ranking print.
     students.rankStudents();
-    System.out.println("!!! This is SORTED !!!\n");
+    System.out.println("-----------------------\n!!! This is SORTED !!!\n-----------------------");
     System.out.println(students.toString() + "\n");
 
     console.close();
