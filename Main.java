@@ -28,7 +28,7 @@ class Main {
 
     //Cycling through to create new "names" and random averages.
     for (int i = 0; i < studentNum; i++){
-      double randomizer = (double) Math.round((minGrade + (Math.random() *(maxGrade-minGrade))) *100.0)/100.0;  //Random average. Cap: 106.
+      double randomizer = (double) Math.round((minGrade + (Math.random() *(maxGrade-minGrade))) *100.0)/100.0;  //Random average.
       String name = "";
       for (int x = 0; x < 2 + (Math.random() * 6); x++){
         name += alphabet[(int) (Math.random() * 26)]; //Adds uses the chars(1-27) to build up a name.
@@ -43,15 +43,17 @@ class Main {
     HonorRoll students = new HonorRoll(roster); //Creating class
     System.out.println(students.toString() + "\n");
 
-    System.out.print("What will be the honor average requirement?");
+    System.out.print("What is the required average to be an honor student? ");
     int require = console.nextInt();
 
     //Non ranked print, based on default arraylist order.
     students.configureStudents(require);
+    System.out.println("!!! This is UN-SORTED !!!\n");
     System.out.println(students.toString() + "\n");
 
     //Ranking print.
     students.rankStudents();
+    System.out.println("!!! This is SORTED !!!\n");
     System.out.println(students.toString() + "\n");
 
     console.close();
