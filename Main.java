@@ -28,7 +28,7 @@ class Main {
 
     //Cycling through to create new "names" and random averages.
     for (int i = 0; i < studentNum; i++){
-      double randomizer = (double) Math.round((minGrade + (Math.random() *(maxGrade-minGrade))) *100.0)/100.0;  //Random average.
+      double randomizer = (double) Math.round((minGrade + (Math.random() *(maxGrade-minGrade))) *100.0)/100.0;  //Random average to the hundredth place.
       String name = "";
       for (int x = 0; x < 2 + (Math.random() * 6); x++){
         name += alphabet[(int) (Math.random() * 26)]; //Adds uses the chars(1-27) to build up a name.
