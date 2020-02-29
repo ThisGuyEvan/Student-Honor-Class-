@@ -4,16 +4,31 @@ class Main {
   public static void main(String[] args){
     //Scanner.
     Scanner console = new Scanner(System.in);
+    ////////////////////////////////////////////////////
+    //              Intializing variables             //
+    ////////////////////////////////////////////////////
     System.out.print("How many students: ");
     int studentNum = console.nextInt();
-    ArrayList<Student> roster = new ArrayList<Student>();
+
+    System.out.print("What's the maximum grade? A+ = ");
+    int maxGrade = console.nextInt();
+
+    System.out.print("What's the minimum grade? F = ");
+    int minGrade = console.nextInt();
+
+    ArrayList<Student> roster = new ArrayList<Student>(); //Create class.
 
     char[] alphabet = "abcdefghijklmnopqrstuvwxyz".toCharArray();
-    System.out.println(Arrays.toString(alphabet));
+    System.out.println(Arrays.toString(alphabet)); //Array of (char) letters.
     
+
+    ////////////////////////////////////////////////////
+    //                Creating Students               //
+    ////////////////////////////////////////////////////
+
     //Cycling through to create new "names" and random averages.
     for (int i = 0; i < studentNum; i++){
-      double randomizer = 65 + (Math.random() *41);  //Random average. Cap: 106.
+      double randomizer = (double) Math.round((minGrade + (Math.random() *(maxGrade-minGrade))) *100.0)/100.0;  //Random average. Cap: 106.
       String name = "";
       for (int x = 0; x < 2 + (Math.random() * 6); x++){
         name += alphabet[(int) (Math.random() * 26)]; //Adds uses the chars(1-27) to build up a name.
@@ -21,6 +36,9 @@ class Main {
       roster.add(new Student(name,randomizer));
     }
    
+    ////////////////////////////////////////////////////
+    //              Testing Honor Class               //
+    ////////////////////////////////////////////////////
     //Printing & testing
     HonorRoll students = new HonorRoll(roster); //Creating class
     System.out.println(students.toString() + "\n");
